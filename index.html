@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>20以内的加减法</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="game-container">
+        <!-- 游戏标题 -->
+        <h1 class="game-title">苹果树上的数学冒险</h1>
+        
+        <!-- 游戏开始界面 -->
+        <div id="start-screen" class="screen">
+            <h2>开始新游戏</h2>
+            <div class="difficulty-selection">
+                <h3>选择难度：</h3>
+                <div class="difficulty-buttons">
+                    <button id="easy-mode" class="difficulty-btn">简单模式</button>
+                    <button id="hard-mode" class="difficulty-btn">进阶模式</button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 游戏进行界面 -->
+        <div id="game-screen" class="screen hidden">
+            <!-- 游戏信息 -->
+            <div class="game-info">
+                <div class="score-display">
+                    <span>当前苹果数：</span>
+                    <span id="apple-count">0</span>
+                </div>
+                <div class="timer-display">
+                    <span>剩余时间：</span>
+                    <span id="time-left">10</span>
+                    <span>秒</span>
+                </div>
+                <div class="question-counter">
+                    <span>题目：</span>
+                    <span id="current-question">0</span>
+                    <span>/20</span>
+                </div>
+                <div class="timeout-counter">
+                    <span>超时次数：</span>
+                    <span id="timeout-count">0</span>
+                    <span>/5</span>
+                </div>
+            </div>
+            
+            <!-- 问题区域 -->
+            <div class="question-area">
+                <div id="question" class="math-question">8 + 5 = ?</div>
+                <div class="answer-input">
+                    <input type="number" id="answer" placeholder="请输入答案">
+                    <button id="submit-answer" class="submit-btn">提交</button>
+                </div>
+            </div>
+            
+            <!-- 消息提示区域 -->
+            <div id="message" class="message-area"></div>
+            
+            <!-- 苹果树显示区域 -->
+            <div class="apple-tree-container">
+                <div class="tree-trunk"></div>
+                <div class="tree-canopy">
+                    <!-- 苹果将通过JavaScript动态添加 -->
+                    <div id="apples-container"></div>
+                    <!-- 毛毛虫将通过JavaScript动态添加 -->
+                    <div id="caterpillar-container"></div>
+                </div>
+            </div>
+            
+            <!-- 操作按钮 -->
+            <div class="game-controls">
+                <button id="pause-game" class="control-btn">暂停游戏</button>
+                <button id="restart-game" class="control-btn">重新开始</button>
+            </div>
+        </div>
+        
+        <!-- 游戏结束界面 -->
+        <div id="end-screen" class="screen hidden">
+            <h2 id="game-result">游戏结束！</h2>
+            <div class="final-stats">
+                <p>正确题目数：<span id="correct-answers">0</span></p>
+                <p>错误题目数：<span id="wrong-answers">0</span></p>
+                <p>超时次数：<span id="total-timeouts">0</span></p>
+                <p>最终苹果数：<span id="final-apples">0</span></p>
+            </div>
+            <button id="play-again" class="play-again-btn">再玩一次</button>
+        </div>
+        
+        <!-- 暂停界面 -->
+        <div id="pause-screen" class="screen hidden">
+            <h2>游戏暂停</h2>
+            <button id="resume-game" class="control-btn">继续游戏</button>
+            <button id="quit-game" class="control-btn">退出游戏</button>
+        </div>
+    </div>
+    
+    <script src="game.js"></script>
+</body>
+</html>
